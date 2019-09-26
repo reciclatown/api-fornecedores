@@ -1,14 +1,14 @@
 version: "3"
 services:
-  mongodb:
+  mongodb-fornecedores:
     image: mongo:3.2.4
-    container_name: "mongodb"
+    container_name: "mongodb-fornecedores"
     ports:
-      - 27017:27017
+      - 27019:27017
     command: --smallfiles
   app:
     image: gabrielsouzaa/api-fornecedores
     ports:
       - 10000:10000
     links:
-      - mongodb
+      - mongodb-fornecedores
